@@ -56,3 +56,37 @@ git clone https://github.com/tnscjf3146/AGENTS
 echo "AGENTS/" >> .gitignore
 ```
 
+이 폴더는 여러 프로젝트가 같이 쓰는 공용 매뉴얼이라 프로젝트 정보는 여기에 적지 않는다.
+프로젝트 루트는 아래처럼 구성한다.
+
+```
+프로젝트/
+├── AGENTS.md      # 프로젝트 정보 (커밋한다)
+├── CLAUDE.md      # @AGENTS.md 한 줄 (Claude Code용)
+├── .gitignore     # AGENTS/ 추가
+└── AGENTS/        # 이 공용 매뉴얼 (커밋하지 않는다)
+    └── .env       # 내 설정 (사람마다 다르다)
+```
+
+루트 `AGENTS.md`는 아래 형식으로 쓴다. 값은 공용 매뉴얼의 문서 파일 이름과 같게 쓴다.
+
+```markdown
+# 프로젝트 이름
+공용 매뉴얼은 @AGENTS/AGENTS.md 를 읽는다.
+공용 매뉴얼은 구성원의 특징, 특성에 따라 달라지기 마련이다. 루트 AGENTS.md의 우선순위가 먼저다. 내용이 다르면 루트 AGENTS.md를 따른다.
+
+## 우선순위
+- 루트 AGENTS.md > AGENTS/.env > 공용 매뉴얼 순서다.
+- AGENTS/.env는 에이전트도 고친다. 값은 아래 프로젝트 정보 안에서 고른다.
+
+## 프로젝트 정보
+- STACK: react, spring
+- ROLE: planner, designer, frontend, backend
+- TOOLS: jira, notion
+- ASSETS: figma
+```
+
+- 프로젝트 전체 정보는 루트 `AGENTS.md`, 내 설정은 `AGENTS/.env`에 적는다.
+- 우선순위는 루트 `AGENTS.md` > `.env` > 공용 매뉴얼 순서다.
+- `.env`는 에이전트도 고친다.
+
